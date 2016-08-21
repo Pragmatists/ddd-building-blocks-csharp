@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                  assembly="DDDBuildingBlocks"
+                  namespace="DDDBuildingBlocks.Domain">
+
+  <class name="Issue" table="issues" lazy="false">
+    <composite-id name="Id" class="IssueNumber">
+      <key-property name="Value" />
+    </composite-id>
+    <property name="Title" />
+    <component name="Status" class="IssueStatus">
+      <property name="Value" column="Status"/>
+    </component>
+
+
+  </class>
+
+</hibernate-mapping>
